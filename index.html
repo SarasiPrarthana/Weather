@@ -5,13 +5,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body>
-    
+<body class="relative text-white min-h-screen font-sans bg-cover bg-center bg-no-repeat"
+    style="background-image: url('/assets/images/weather.jpg');">
+
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+
+    <div class="relative max-w-6xl mx-auto p-4">
+
+        <div class="flex justify-end mb-6">
+            <div class="flex bg-white bg-opacity-20 rounded-full px-3 py-1 items-center">
+                <input type="text" id="search-city" placeholder="Search city..."
+                    class="bg-transparent border-none focus:outline-none text-white placeholder-white px-2">
+                <button id="search-btn" class="text-white hover:text-yellow-300">
+                    🔍
+                </button>
+            </div>
+        </div>
+
+        <section class="weather-card p-6 mb-6">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                <div>
+                    <h1 id="location" class="text-3xl font-bold">Colombo, Sri Lanka</h1>
+                    <p id="local-time" class="text-sm opacity-80">Monday, 2:30 PM</p>
+                    <div class="flex items-center mt-4">
+                        <img id="weather-icon" src="/assets/images/sun-removebg-preview.png" alt="Weather Icon"
+                            class="w-12 h-12">
+                        <p id="weather-condition" class="ml-3 text-xl">Sunny</p>
+                    </div>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <p id="temperature" class="text-5xl font-bold">29°C</p>
+                    <p id="feels-like" class="text-sm opacity-80">Feels like 31°C</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 mt-6 text-sm">
+                <p>💨 Wind: <span id="wind-speed">15 KPH</span></p>
+                <p>💧 Humidity: <span id="humidity">60%</span></p>
+                <p>☁️ Cloud: <span id="cloud-cover">20%</span></p>
+                <p>🌞 UV Index: <span id="uv-index">5</span></p>
+                <p>📊 Pressure: <span id="pressure">1012 hPa</span></p>
+                <p>👁 Visibility: <span id="visibility">10 km</span></p>
+            </div>
+        </section>
+
+      
     <script src="/assets/js/weather.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 </body>
